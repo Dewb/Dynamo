@@ -693,7 +693,7 @@ let rec private compile (compenv : CompilerEnv) syntax : (Environment -> Express
                 def := cbody env
                 //Return the dummy for the define statement
                 dummy
-   
+
     //Functions
     | Fun(parameters, body) ->
         ///Traverses a syntax tree looking for new identifiers from define statements.
