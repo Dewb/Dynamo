@@ -598,7 +598,7 @@ let private findInEnv (name : string) compenv =
     find 0 compenv
 
 //Returns a function that takes an argument, ignores it, and returns the given input to wrap.
-let private wrap x = fun _ -> x
+let private wrap x _ = x
 
 ///Compiles Syntax
 let rec private compile (compenv : CompilerEnv) syntax : (Environment -> Expression) =
@@ -693,7 +693,7 @@ let rec private compile (compenv : CompilerEnv) syntax : (Environment -> Express
                 def := cbody env
                 //Return the dummy for the define statement
                 dummy
-   
+
     //Functions
     | Fun(parameters, body) ->
         ///Traverses a syntax tree looking for new identifiers from define statements.
