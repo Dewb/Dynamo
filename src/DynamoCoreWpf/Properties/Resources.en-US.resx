@@ -713,6 +713,14 @@ You will get a chance to save your work.</value>
   <data name="DynamoViewRunButtonToolTipDisabled" xml:space="preserve">
     <value>Run is not available when running Automatically or Periodically.</value>
   </data>
+  <data name="DynamoViewCancelButton" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Cancel button</comment>
+  </data>
+  <data name="DynamoViewCancelButtonTooltip" xml:space="preserve">
+    <value>Cancel Execution</value>
+    <comment>Cancel button tooltip</comment>
+  </data>
   <data name="DynamoViewSamplesMenuShowInFolder" xml:space="preserve">
     <value>Show In Folder</value>
   </data>

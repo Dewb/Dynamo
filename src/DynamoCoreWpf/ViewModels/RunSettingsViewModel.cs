@@ -216,6 +216,14 @@ namespace Dynamo.Wpf.ViewModels
             }
         }
 
+        public Visibility CancelButtonVisibility
+        {
+            get
+            {
+                return Visibility.Visible;
+            }
+        }
+
         #endregion
 
         #region constructors
