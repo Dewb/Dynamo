@@ -47,6 +47,9 @@
                                               NoneBrush="#444">
     </controls:ConnectionStateToBrushConverter>
 
+    <controls:ConnectionStateToBoolConverter x:Key="ConnectionStateToBoolConverter">
+    </controls:ConnectionStateToBoolConverter>
+
     <controls:ConnectionStateToVisibilityCollapsedConverter x:Key="ConnectionStateToVisibilityCollapsedConverter"/>
                                                             
     <controls:StateToColorConverter x:Key="StateToColorConverter"

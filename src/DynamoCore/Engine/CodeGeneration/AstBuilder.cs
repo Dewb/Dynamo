@@ -231,7 +231,7 @@ namespace Dynamo.Engine.CodeGeneration
         /// </summary>
         /// <param name="nodes"></param>
         /// <returns></returns>
-        internal static IEnumerable<NodeModel> TopologicalSortForGraph(IEnumerable<NodeModel> nodes)
+        public static IEnumerable<NodeModel> TopologicalSortForGraph(IEnumerable<NodeModel> nodes)
         {
             if (nodes == null)
                 throw new ArgumentNullException("nodes");

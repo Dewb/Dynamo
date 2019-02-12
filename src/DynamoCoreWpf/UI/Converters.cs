@@ -555,6 +555,26 @@ namespace Dynamo.Controls
         }
     }
 
+    public class ConnectionStateToBoolConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            var state = (PreviewState)value;
+            switch (state)
+            {
+                case PreviewState.ExecutionPreview:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return null;
+        }
+    }
+
     public class ConnectionStateToColorConverter : IValueConverter
     {
         public Color ExecutionPreview { get; set; }

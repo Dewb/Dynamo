@@ -124,13 +124,18 @@
                 StrokeDashArray="2"
                 StrokeThickness="3"
                 Opacity=".5"
-                Stroke="#444">
+                >
             <Rectangle.Style>
                 <Style TargetType="{x:Type Rectangle}">
                     <Setter Property="Visibility" Value="Hidden"/>
+                    <Setter Property="Stroke" Value="#444"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding IsFrozen}" Value="True">
                             <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PreviewState, Converter={StaticResource ConnectionStateToBoolConverter}}" Value="True">
+                            <Setter Property="Stroke" Value="#FB0"/>
+                            <Setter Property="StrokeDashArray" Value=""/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>

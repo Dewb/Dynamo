@@ -7,43 +7,43 @@ using Dynamo.Utilities;
 
 namespace Dynamo.Models
 {
-    internal class ZoomEventArgs : EventArgs
+    public class ZoomEventArgs : EventArgs
     {
-        internal enum ZoomModes
+        public enum ZoomModes
         {
             ByPoint = 0x00000001,
             ByFactor = 0x00000002,
             ByFitView = 0x00000004
         }
 
-        internal Point2D Point { get; set; }
-        internal double Zoom { get; set; }
-        internal ZoomModes Modes { get; private set; }
+        public Point2D Point { get; set; }
+        public double Zoom { get; set; }
+        public ZoomModes Modes { get; private set; }
 
-        internal Point2D Offset { get; set; }
-        internal double FocusWidth { get; set; }
-        internal double FocusHeight { get; set; }
+        public Point2D Offset { get; set; }
+        public double FocusWidth { get; set; }
+        public double FocusHeight { get; set; }
 
-        internal ZoomEventArgs(double zoom)
+        public ZoomEventArgs(double zoom)
         {
             Zoom = zoom;
             this.Modes = ZoomModes.ByFactor;
         }
 
-        internal ZoomEventArgs(Point2D point)
+        public ZoomEventArgs(Point2D point)
         {
             this.Point = point;
             this.Modes = ZoomModes.ByPoint;
         }
 
-        internal ZoomEventArgs(double zoom, Point2D point)
+        public ZoomEventArgs(double zoom, Point2D point)
         {
             this.Point = point;
             this.Zoom = zoom;
             this.Modes = ZoomModes.ByPoint | ZoomModes.ByFactor;
         }
 
-        internal ZoomEventArgs(Point2D offset, double focusWidth, double focusHeight)
+        public ZoomEventArgs(Point2D offset, double focusWidth, double focusHeight)
         {
             this.Offset = offset;
             this.FocusWidth = focusWidth;
@@ -51,7 +51,7 @@ namespace Dynamo.Models
             this.Modes = ZoomModes.ByFitView;
         }
 
-        internal ZoomEventArgs(Point2D offset, double focusWidth, double focusHeight, double zoom)
+        public ZoomEventArgs(Point2D offset, double focusWidth, double focusHeight, double zoom)
         {
             this.Offset = offset;
             this.FocusWidth = focusWidth;
@@ -60,12 +60,12 @@ namespace Dynamo.Models
             this.Modes = ZoomModes.ByFitView | ZoomModes.ByFactor;
         }
 
-        internal bool hasPoint()
+        public bool hasPoint()
         {
             return this.Modes.HasFlag(ZoomModes.ByPoint);
         }
 
-        internal bool hasZoom()
+        public bool hasZoom()
         {
             return this.Modes.HasFlag(ZoomModes.ByFactor);
         }

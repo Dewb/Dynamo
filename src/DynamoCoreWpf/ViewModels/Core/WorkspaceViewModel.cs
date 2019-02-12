@@ -116,7 +116,7 @@ namespace Dynamo.ViewModels
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnRequestZoomToFitView(object sender, ZoomEventArgs e)
+        public void OnRequestZoomToFitView(object sender, ZoomEventArgs e)
         {
             if (RequestZoomToFitView != null)
             {
